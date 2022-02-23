@@ -42,7 +42,6 @@ void Rtc::setTimeFlag(bool state) {
 }
 
 bool Rtc::getTimeFlag() {
-    // Toggle between 12hr and 24hr clock
     rtcRegisters reg = REGISTER_CONTROL;
 
     uint8_t flag = this->readByte(REGISTER_CONTROL);
