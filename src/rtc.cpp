@@ -43,8 +43,7 @@ void Rtc::setTimeFlag(bool state) {
 
 bool Rtc::getTimeFlag() {
     rtcRegisters reg = REGISTER_CONTROL;
-
-    uint8_t flag = this->readByte(REGISTER_CONTROL);
+    uint8_t flag = this->readByte(reg);
 
     // Isolate 5th bit by shifting to right and ANDing it using 0b0
     return (bool) (flag >> 5) & 1U;
